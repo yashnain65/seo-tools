@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Title Generator</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+
+.container{
+text-align:center;
+padding:60px 20px;
+}
+
+input{
+padding:10px;
+width:250px;
+margin-right:10px;
+}
+
+button{
+padding:10px 18px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+ul{
+margin-top:30px;
+list-style:none;
+}
+
+li{
+background:white;
+margin:8px auto;
+padding:10px;
+width:300px;
+border-radius:5px;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>SEO Tool Hub</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="#">Tools</a>
+<a href="#">Pricing</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<h2>SEO Title Generator</h2>
+
+<input type="text" id="keyword" placeholder="Enter keyword">
+
+<button onclick="generateTitles()">Generate Titles</button>
+
+<ul id="result"></ul>
+
+</div>
+
+<script>
+
+function generateTitles(){
+
+let keyword = document.getElementById("keyword").value;
+
+let titles = [
+"10 Best " + keyword + " Tips",
+"How to Start " + keyword,
+"Complete Guide to " + keyword,
+"Top " + keyword + " Strategies",
+keyword + " for Beginners",
+"Best " + keyword + " Ideas",
+"Advanced " + keyword + " Tricks",
+keyword + " Secrets You Should Know",
+keyword + " Tutorial",
+"Ultimate " + keyword + " Guide"
+];
+
+let list = titles.map(t => "<li>"+t+"</li>").join("");
+
+document.getElementById("result").innerHTML = list;
+
+}
+
+</script>
+
+</body>
+
+</html>
