@@ -55,14 +55,18 @@ keyword + " course",
 keyword + " tricks"
 ];
 
-let list = tags.map(t =>
-`<li>
-${t}
-<button onclick="copyTag('${t}')">Copy</button>
-</li>`
-).join("");
+let html = "";
 
-document.getElementById("result").innerHTML = list;
+tags.forEach(tag => {
+html += `
+<li>
+${tag}
+<button onclick="copyTag('${tag}')">Copy</button>
+</li>
+`;
+});
+
+document.getElementById("result").innerHTML = html;
 
 }
 
@@ -70,7 +74,7 @@ function copyTag(text){
 
 navigator.clipboard.writeText(text);
 
-alert("Tag copied: " + text);
+alert("Copied: " + text);
 
 }
 
