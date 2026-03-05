@@ -82,8 +82,11 @@ margin-bottom:30px;
 .tool-container{
 display:flex;
 justify-content:center;
+align-items:stretch;
 flex-wrap:wrap;
 gap:25px;
+max-width:900px;
+margin:auto;
 }
 
 .tool-card{
