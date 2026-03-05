@@ -55,14 +55,26 @@ keyword + " course",
 keyword + " tricks"
 ];
 
-let list = tags.map(t => "<li>"+t+"</li>").join("");
+let list = tags.map(t =>
+`<li>
+${t}
+<button onclick="copyTag('${t}')">Copy</button>
+</li>`
+).join("");
 
 document.getElementById("result").innerHTML = list;
 
 }
 
-</script>
+function copyTag(text){
 
+navigator.clipboard.writeText(text);
+
+alert("Tag copied: " + text);
+
+}
+
+</script>
 </body>
 
 </html>
