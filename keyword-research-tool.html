@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Keyword Research Tool</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6f9;
+text-align:center;
+margin:0;
+}
+
+header{
+background:#111;
+color:white;
+padding:15px;
+}
+
+.container{
+margin-top:40px;
+}
+
+input{
+padding:10px;
+width:250px;
+font-size:16px;
+}
+
+button{
+padding:10px 20px;
+font-size:16px;
+background:#007bff;
+color:white;
+border:none;
+cursor:pointer;
+margin-left:10px;
+}
+
+ul{
+list-style:none;
+padding:0;
+margin-top:30px;
+}
+
+li{
+background:white;
+margin:8px auto;
+padding:10px;
+width:300px;
+border-radius:5px;
+box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>Keyword Research Tool</h1>
+</header>
+
+<div class="container">
+
+<input type="text" id="keyword" placeholder="Enter keyword">
+
+<button onclick="generateKeywords()">Generate</button>
+
+<ul id="result"></ul>
+
+</div>
+
+<script>
+
+function generateKeywords(){
+
+let keyword = document.getElementById("keyword").value;
+
+let keywords = [
+keyword + " tips",
+keyword + " tutorial",
+keyword + " ideas",
+keyword + " guide",
+keyword + " strategy",
+keyword + " tools",
+keyword + " for beginners",
+keyword + " 2026",
+keyword + " secrets",
+keyword + " course"
+];
+
+let list = keywords.map(k => "<li>"+k+"</li>").join("");
+
+document.getElementById("result").innerHTML = list;
+
+}
+
+</script>
+
+</body>
+
+</html>
