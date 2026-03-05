@@ -55,18 +55,20 @@ keyword + " course",
 keyword + " tricks"
 ];
 
-let html = "";
+let resultHTML = "";
 
 tags.forEach(tag => {
-html += `
+
+resultHTML += `
 <li>
-${tag}
+<span>${tag}</span>
 <button onclick="copyTag('${tag}')">Copy</button>
 </li>
 `;
+
 });
 
-document.getElementById("result").innerHTML = html;
+document.getElementById("result").innerHTML = resultHTML;
 
 }
 
