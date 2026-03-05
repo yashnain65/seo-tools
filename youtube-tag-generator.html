@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YouTube Tag Generator</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<h2>SEO Tool Hub</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="#">Tools</a>
+<a href="#">Pricing</a>
+</nav>
+
+</header>
+
+<section class="tools">
+
+<h2>YouTube Tag Generator</h2>
+
+<input type="text" id="keyword" placeholder="Enter keyword">
+
+<button onclick="generateTags()">Generate Tags</button>
+
+<ul id="result"></ul>
+
+</section>
+
+<script>
+
+function generateTags(){
+
+let keyword = document.getElementById("keyword").value;
+
+let tags = [
+keyword,
+keyword + " tutorial",
+keyword + " tips",
+keyword + " guide",
+keyword + " 2026",
+keyword + " for beginners",
+keyword + " strategy",
+keyword + " secrets",
+keyword + " course",
+keyword + " tricks"
+];
+
+let list = tags.map(t => "<li>"+t+"</li>").join("");
+
+document.getElementById("result").innerHTML = list;
+
+}
+
+</script>
+
+</body>
+
+</html>
