@@ -207,3 +207,17 @@ color:white;
 border-radius:5px;
 cursor:pointer;
 }
+
+/* Tool search */
+
+.tool-search{
+text-align:center;
+margin-bottom:30px;
+}
+
+.tool-search input{
+width:320px;
+padding:12px;
+border-radius:6px;
+border:1px solid #ddd;
+}
