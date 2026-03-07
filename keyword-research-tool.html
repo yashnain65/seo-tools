@@ -68,14 +68,15 @@ box-shadow:0 0 5px rgba(0,0,0,0.1);
 
 <div class="container">
 
+<h2>Keyword Research Tool</h2>
+
 <input type="text" id="keyword" placeholder="Enter keyword">
 
-<button onclick="generateKeywords()">Generate</button>
+<button onclick="generateKeywords()">Generate Keywords</button>
 
 <ul id="result"></ul>
 
 </div>
-
 <script>
 
 async function generateKeywords(){
@@ -83,7 +84,7 @@ async function generateKeywords(){
 let keyword = document.getElementById("keyword").value;
 
 if(keyword === ""){
-alert("Please enter a keyword");
+alert("Enter a keyword");
 return;
 }
 
