@@ -78,31 +78,49 @@ box-shadow:0 0 5px rgba(0,0,0,0.1);
 
 <script>
 
-function generateKeywords(){
+async function generateKeywords(){
 
 let keyword = document.getElementById("keyword").value;
 
-let keywords = [
-keyword + " tips",
-keyword + " tutorial",
-keyword + " ideas",
-keyword + " guide",
-keyword + " strategy",
-keyword + " tools",
-keyword + " for beginners",
-keyword + " 2026",
-keyword + " secrets",
-keyword + " course"
-];
+if(keyword === ""){
+alert("Please enter a keyword");
+return;
+}
 
-let list = keywords.map(k => "<li>"+k+"</li>").join("");
+let url = "https://suggestqueries.google.com/complete/search?client=firefox&q=" + keyword;
 
-document.getElementById("result").innerHTML = list;
+let response = await fetch(url);
+
+let data = await response.json();
+
+let keywords = data[1];
+
+let html = "";
+
+keywords.forEach(k => {
+
+html += `
+<li>
+<span>${k}</span>
+<button onclick="copyKeyword('${k}')">Copy</button>
+</li>
+`;
+
+});
+
+document.getElementById("result").innerHTML = html;
+
+}
+
+function copyKeyword(text){
+
+navigator.clipboard.writeText(text);
+
+alert("Copied: " + text);
 
 }
 
 </script>
-
 </body>
 
 </html>
